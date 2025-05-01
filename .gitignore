@@ -1,6 +1,10 @@
+# CUDA gitignore template
 *.i
 *.ii
 *.gpu
 *.ptx
 *.cubin
 *.fatbin
+
+# Binaries
+playground/add_vec
