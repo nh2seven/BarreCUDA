@@ -35,6 +35,20 @@ __global__ void mv_mulBias(const float *A, const float *x, const float *b, float
     }
 }
 
+// Matrix transpose-vector multiplication: result = A^T * y; A: m x n, y: m-vector, result: n-vector
+__global__ void mv_transMul(const float *A, const float *y, float *result, int m, int n)
+{
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+    
+    if (col < n) {
+        float sum = 0.0f;
+        for (int row = 0; row < m; row++) {
+            sum += A[row * n + col] * y[row];
+        }
+        result[col] = sum;
+    }
+}
+
 // Matrix-matrix operations -------------------------------------------------------------
 // Matrix-matrix multiplication: C = A * B; A: m x k, B: k x n, C: m x n
 __global__ void mm_mul(const float *A, const float *B, float *C, int m, int k, int n)

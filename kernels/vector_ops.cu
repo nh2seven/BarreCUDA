@@ -36,6 +36,16 @@ __global__ void v_add(const float *a, const float *b, float *c, int n)
         c[idx] = a[idx] + b[idx];
 }
 
+// Scalar addition: c = a + scalar
+__global__ void v_sAdd(const float *a, float scalar, float *c, int n)
+{
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+
+    // Thread safety check
+    if (idx < n)
+        c[idx] = a[idx] + scalar;
+}
+
 // Vector subtraction: c = a - b
 __global__ void v_sub(const float *a, const float *b, float *c, int n)
 {
