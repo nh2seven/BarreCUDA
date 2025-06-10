@@ -6,5 +6,9 @@
 *.cubin
 *.fatbin
 
+# Directories
+build/
+.vscode/
+
 # Binaries
 playground/bin/
