@@ -1,8 +1,7 @@
 #ifndef MATRIX_OPS
 #define MATRIX_OPS
 
-#include <cuda_runtime.h>
-#include <device_launch_parameters.h>
+#include <matrix_ops.h>
 
 // Matrix-vector operations -------------------------------------------------------------
 // Matrix-vector multiplication: y = A * x; A: m x n, x: n-vector, y: m-vector

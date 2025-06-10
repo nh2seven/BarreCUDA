@@ -1,8 +1,7 @@
 #ifndef ADAM_OPTIM
 #define ADAM_OPTIM
 
-#include <cuda_runtime.h>
-#include <device_launch_parameters.h>
+#include <adam.h>
 #include <math.h>
 
 /*

@@ -1,8 +1,7 @@
 #ifndef VECTOR_OPS
 #define VECTOR_OPS
 
-#include <cuda_runtime.h>
-#include <device_launch_parameters.h>
+#include <vector_ops.h>
 
 // Helper operations -------------------------------------------------------------
 // Vector initialization with constant value

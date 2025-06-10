@@ -1,8 +1,7 @@
 #ifndef MSE_LOSS
 #define MSE_LOSS
 
-#include <cuda_runtime.h>
-#include <device_launch_parameters.h>
+#include <mse_loss.h>
 
 // MSE loss computation; loss = (1/2n) * sum((y_pred - y_true)^2)
 __global__ void mse_loss(const float *y_pred, const float *y_true, float *losses, int n)
